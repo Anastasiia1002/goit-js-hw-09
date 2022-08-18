@@ -10,7 +10,7 @@ const myInput = document.querySelector('#datetime-picker');
 const start = document.querySelector('button[data-start]');
 
 let endDate;
-
+start.disabled = true;
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -18,7 +18,7 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     //console.log(selectedDates[0]);
-    if (selectedDates[0] < new Date()) {
+    if (selectedDates[0] <= new Date()) {
       start.disabled = true;
       Notiflix.Notify.failure('Please choose a date in the future');
       return;

@@ -35,7 +35,7 @@ const fp = flatpickr(myInput, options);
 start.addEventListener('click', () => {
   start.disabled = true;
 
-  intervalId = setInterval(() => {
+  const intervalId = setInterval(() => {
     let currentTime = new Date();
     let deltaTime = endDate - currentTime;
 
